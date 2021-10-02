@@ -1,3 +1,20 @@
+/*
+Problem: Maximum profit in job scheduling
+
+Approach:
+We can solve this problem considering the start time and end time of the jobs. 
+In case of considering start time:
+We sort the jobs according to their start time. For every job, if we select it then the total profit will be the profit from that job + the profit from the
+job after it. If we don't select it, then the total profit will be the next job after start time +1, and we will consider the best of 2 for maximum profit.
+
+In case of considering end time:
+We sort the jobs according to their end time. For every job, if we select it, then the total profit will be the profit from that job + the profit from the job
+before start time. If we don't select it, then the total profit will be the the next job before end -1, and we will consider the best of 2 for maximum profit.
+
+Space Complexity: O(N)
+Time Complexity: O(N(2^N))
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 struct Data{
